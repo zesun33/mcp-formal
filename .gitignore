@@ -1,0 +1,20 @@
+node_modules/
+dist/
+*.log
+sby_work/
+*_bmc/
+*_prove/
+*_cover/
+formal_tmp_*
+dbg_tmp*
+*.smtc
+*.yw
+trace*.vcd
+.DS_Store
+
+# Agent memory / local progress (never commit)
+MEMORY.md
+MEMORY.local.md
+.memory/
+*.memory.md
+*.local.md
