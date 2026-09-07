@@ -22,7 +22,7 @@
 // Tool Call: formal_toolchain_info
 {
   "runtime": "podman",
-  "image": "localhost/zesun33/asic",
+  "image": "ghcr.io/zesun33/asic",
   "solvers": ["z3 (Z3 version 5.1.0 - 64 bit)"],
   "engines": ["smtbmc_z3"]
 }
@@ -75,17 +75,26 @@
 
 ## Execution Runtime
 
-`mcp-formal` runs inside the [`zesun33/asic`](https://github.com/zesun33/eda-docker-images) rootless Podman image (`localhost/zesun33/asic`):
+`mcp-formal` runs inside the [`zesun33/asic`](https://github.com/zesun33/eda-docker-images) rootless Podman image so tools are identical on any Linux host.
+
+**Public install (recommended — anyone can pull):**
+```bash
+podman pull ghcr.io/zesun33/asic:latest
+export MCP_FORMAL_IMAGE=ghcr.io/zesun33/asic
+```
+
+Local builds from `eda-docker-images` still work as `localhost/zesun33/asic` (the historical default). Override anytime with `MCP_FORMAL_IMAGE`.
 
 - Container mount: `-v <workspace>:/workspace:Z -w /workspace`
 - Podman storage option: `--storage-opt overlay.ignore_chown_errors=true`
-- SBY work dirs (`sby_work_*/`) are created under the workspace and removed unless `keep_workdir` is set
 
 To force host binaries instead of container execution:
-
 ```bash
 export MCP_FORMAL_RUNTIME=host
 ```
+
+Requires SymbiYosys + z3 in the image (shipped in `zesun33/asic`).
+
 
 ---
 
