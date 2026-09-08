@@ -28,7 +28,7 @@ export class ToolRunner {
 
   constructor() {
     const envRuntime = process.env.MCP_FORMAL_RUNTIME as RuntimeType | undefined;
-    this.imageName = process.env.MCP_FORMAL_IMAGE || "localhost/zesun33/asic";
+    this.imageName = process.env.MCP_FORMAL_IMAGE || "ghcr.io/zesun33/asic";
 
     if (envRuntime && ["podman", "docker", "host"].includes(envRuntime)) {
       this.runtime = envRuntime;

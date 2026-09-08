@@ -13,7 +13,7 @@ export function createServer(runner: ToolRunner = new ToolRunner()): Server {
   const server = new Server(
     {
       name: "@zesun33/mcp-formal",
-      version: "0.1.0",
+      version: "0.1.1",
     },
     {
       capabilities: {

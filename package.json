@@ -1,6 +1,6 @@
 {
   "name": "@zesun33/mcp-formal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Model Context Protocol (MCP) server for SymbiYosys formal verification (BMC/prove) and SVA linting",
   "type": "module",
   "bin": {
