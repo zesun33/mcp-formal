@@ -11,6 +11,16 @@
 
 > Engine reality (verified live): the image ships SBY with the `smtbmc z3` engine (z3 5.1.0). The ABC/PDR engine is excluded: it crashes parsing witness output against this Yosys build. Sequential/multi-clock properties may report UNKNOWN or exhaust depth instead of proving; treat those as work for deeper bounds or induction, not as passes.
 
+## Install and run
+
+Run this MCP server directly from npm:
+
+```bash
+npx -y @zesun33/mcp-formal
+```
+
+For the complete hardware-agent setup, use `npx -y @zesun33/create-hw-agent my-asic`.
+
 ---
 
 ## ⚡ Quick Tour: See It in Action
